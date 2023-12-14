@@ -6,7 +6,6 @@ img{
   /* height: 100%; */
 }
 
-
 body{
   transition:all .3s;
   background: linear-gradient(to bottom,#ff6a00,#720400);
