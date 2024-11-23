@@ -11,6 +11,7 @@ import { getNode } from "/client/lib/index.js";
 */
 const nav = getNode(".nav");
 const img = getNode(".visual img");
+const nickName = getNode(".nickName");
 
 function handler(e) {
   e.preventDefault();
@@ -25,6 +26,7 @@ function handler(e) {
 
   img.src = `./assets/${data[index - 1].name.toLowerCase()}.jpeg`;
   img.alt = data[index - 1].alt;
+  nickName.textContent = data[index - 1].name;
   target.classList.add("is-active");
 }
 
