@@ -11,7 +11,6 @@ import { getNode, setBgColor, setImage, setNameText } from "/client/lib/index.js
 */
 const nav = getNode(".nav");
 const img = getNode(".visual img");
-const audio = getNode(".visual audio");
 const nickName = getNode(".nickName");
 
 function handler(e) {
