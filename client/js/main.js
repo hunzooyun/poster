@@ -1,5 +1,5 @@
 import { data } from "./data.js";
-import { getNode } from "/client/lib/index.js";
+import { getNode, setBgColor, setImage, setNameText } from "/client/lib/index.js";
 /* 
 
 1. 클릭 이벤트 활성화
@@ -11,6 +11,7 @@ import { getNode } from "/client/lib/index.js";
 */
 const nav = getNode(".nav");
 const img = getNode(".visual img");
+const audio = getNode(".visual audio");
 const nickName = getNode(".nickName");
 
 function handler(e) {
@@ -21,12 +22,11 @@ function handler(e) {
 
   if (!target) return;
   const index = target.dataset.index;
-
+  const { color, name, alt } = data[index - 1];
   list.forEach((li) => li.classList.remove("is-active"));
-
-  img.src = `./assets/${data[index - 1].name.toLowerCase()}.jpeg`;
-  img.alt = data[index - 1].alt;
-  nickName.textContent = data[index - 1].name;
+  setBgColor(color);
+  setImage(img, name, alt);
+  setNameText(nickName, name);
   target.classList.add("is-active");
 }
 
